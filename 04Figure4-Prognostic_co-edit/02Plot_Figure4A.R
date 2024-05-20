@@ -103,4 +103,3 @@ pp <- signif(prog.dif$pvalue,3)
 text(500,0.1,paste0("logrank p-value=",pp));
 }
 
-
