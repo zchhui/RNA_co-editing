@@ -3,7 +3,7 @@ options(stringsAsFactors = F)
 setwd(pat);
 exp <- read.table("D:/HFU/RNA_editing_combine_regulation/data/validate/GSE169289_Transcript_FPKM.txt",header=T,as.is=T);
 id <- read.table("D:/HFU/ID/Gene_name2Refseq.txt",header=T,as.is=T,sep="\t");
-gene <- read.table("8co_tar_deg_gene.txt",header=T,sep="\t",stringsAsFactors=F); 
+gene <- read.table("co_tar_deg_gene.txt",header=T,sep="\t",stringsAsFactors=F); 
 #gene <- read.table("co_target3.txt",header=T,sep="\t",stringsAsFactors=F); 
 #gene <- read.table("co_target2.txt",header=T,sep="\t",stringsAsFactors=F); 
 id <- id[id[,1]%in%gene[,1],]
