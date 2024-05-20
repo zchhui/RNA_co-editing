@@ -36,3 +36,4 @@ circos.genomicLink(df1, df2,  # bed files,chr,start,end,value
                    col= rgb(229, 229, 229, 20, maxColorValue=255), lwd=1,lty=3 )
 dev.off()
 
+
