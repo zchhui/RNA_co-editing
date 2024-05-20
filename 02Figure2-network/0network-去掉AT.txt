@@ -5,3 +5,4 @@ ind2 <- grep("A;T",data[,2])
 ind <- union(ind1,ind2)
 net <- data[-ind,]
 write.table(net,"RADAR_CO_network.txt",sep="\t",col.names=T,row.names=F,quote=F)
+
