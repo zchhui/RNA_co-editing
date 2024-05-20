@@ -1,6 +1,6 @@
 #Co-edit network was constructed
 rm(list=ls());
-ed.t <- "/NFSdata/CJ/CO_edit/res/RADAR_targets_fdr05_fc2.txt";
+ed.t <- "/NFSdata/CJ/CO_edit/res/RADAR_targets_fdr05_fc2_adjust_fdr05.txt";
 co <- "/NFSdata/CJ/CO_edit/res/RADAR_edit_CO_fdr05_per1000_fdr05.txt";
 ed.t <- read.table(ed.t,header=F,as.is=T);
 co <- read.table(co,header=T,as.is=T);
