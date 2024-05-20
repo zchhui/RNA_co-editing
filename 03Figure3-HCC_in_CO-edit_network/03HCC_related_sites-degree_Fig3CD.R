@@ -21,24 +21,4 @@ nm <- round(nrow(de.hcc)*0.1)
 hub <- de.hcc[de.hcc[,2]>=deg[nm],];
 
 
-hcc.Web=intersect(de.hcc[,1],hcc[,5]) 
-hcc.hub=intersect(hub[,1],hcc[,5]) 
-nhcc.Web <- setdiff(de.hcc[,1],hcc[,5]);
-nhcc.hub <- intersect(nhcc.Web,hub[,1]) 
-hccweb.num=length(hcc.Web)  
-nhccweb.num=length(nhcc.Web) 
-hcc.hub.num=length(hcc.hub)  
-nhcc.hub.num=length(nhcc.hub) 
-z=matrix(c(hcc.hub.num,nhcc.hub.num,(hccweb.num-hcc.hub.num),
-         (nhccweb.num-nhcc.hub.num)),nrow=2)
-hcc_hub=fisher.test(z)
-p.hub <- hcc_hub$p.value 
-barplot(c(hcc.hub.num/hccweb.num,nhcc.hub.num/nhccweb.num),
-        col=c("darkred","grey"),ylim=c(0,1),names.arg=c("HCC_related_editing_sites","Other nodes"),
-        ylab="Percentage of hub nodes",cex.lab=1.5)
-text(c(1,0.6),paste0("Fisher's test","\n","p=",signif(p.hub,2)))
-write.csv(de.hcc,"../res/degree_HCC_Attr.csv",row.names=F,quote=F)
-z
-#     [,1] [,2]
-#[1,]   96  103
-#[2,]  619 6331
+hcc.
