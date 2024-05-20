@@ -50,5 +50,3 @@ res <- data.frame(result,ed.adj.p.val=p.val,ed.adj.fdr=fdr);
 write.table(res,"CO_prog_fdr05_5per_new_adjust_single_ed_stage_grade.txt",sep="\t",col.names=T,row.names=F,quote=F);
 
 
-
-
