@@ -11,3 +11,5 @@ text(0,seq(0.7,4.3,length=nrow(mod2)),mod2[,1],adj=0)
 barplot(abs(log2(mod3[,3])),horiz=T,col="pink",main="Enriched KEGG in module3",xlab="Enrichment(log2(adjust p value))");
 text(0,seq(0.7,6.7,length=nrow(mod3)),mod3[,1],adj=0)
 
+
+
