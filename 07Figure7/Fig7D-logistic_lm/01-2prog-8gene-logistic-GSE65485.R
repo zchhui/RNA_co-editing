@@ -2,7 +2,7 @@ pat <- "D:/HFU/RNA_editing_combine_regulation/res/";
 options(stringsAsFactors = F)
 setwd(pat);
 exp <- read.table("D:/HFU/RNA_editing_combine_regulation/data/validate/GSE65485_HCC_FPKM_50T_5N.txt",header=T,as.is=T);
-gene <- read.table("8co_tar_deg_gene.txt",header=T,sep="\t",stringsAsFactors=F); 
+gene <- read.table("co_tar_deg_gene.txt",header=T,sep="\t",stringsAsFactors=F); 
 exp.r <- sapply(strsplit(exp[,1],"_"),function(x)x[[1]]);
 exp[,1] <- exp.r;
 
