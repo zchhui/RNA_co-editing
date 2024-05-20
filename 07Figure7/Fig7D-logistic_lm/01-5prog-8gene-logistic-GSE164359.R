@@ -3,7 +3,7 @@ options(stringsAsFactors = F)
 setwd(pat);
 exp <- read.table("D:/HFU/RNA_editing_combine_regulation/data/validate/GSE164359_gene_expression.txt",sep="\t",header=T,as.is=T);
 sam <- read.table("D:/HFU/RNA_editing_combine_regulation/data/validate/GSE164359_sam_info.csv",header=T,as.is=T,sep=",");
-gene <- read.table("8co_tar_deg_gene.txt",header=T,sep="\t",stringsAsFactors=F); 
+gene <- read.table("co_tar_deg_gene.txt",header=T,sep="\t",stringsAsFactors=F); 
 
 exp.g <- exp[exp[,1]%in%gene[,1],];
 rownames(exp.g) <- exp.g[,1];
