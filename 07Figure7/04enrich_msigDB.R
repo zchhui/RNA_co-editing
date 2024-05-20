@@ -50,4 +50,3 @@ write.table(com.go,paste0("./deg/kegg_enrich_",i,".txt"),sep="\t",row.names=F,qu
 }
 }
 }
-
