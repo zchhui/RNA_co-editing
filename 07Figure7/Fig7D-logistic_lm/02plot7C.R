@@ -19,3 +19,4 @@ text(0.7,0.5,paste0("GSE164359-recurent: n=",N5.2," AUC=",p5.2),col=colorss[7]);
 f=function(x){ y=x;return(y)}
 curve(f(x),0,1,col="grey",lwd=2,lty=2,add=T)
 
+
