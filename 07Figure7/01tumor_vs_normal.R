@@ -22,4 +22,3 @@ diff_gene_deseq2 <- subset(res,padj < 0.05 & (log2FoldChange > 1 | log2FoldChang
 diff_gene_deseq2 <- row.names(diff_gene_deseq2)
 write.csv(res,file= "./deg/TCGA_mRNA_DE_group_tumor_vs_normal.csv",row.names = T)# 得到csv格式的差异表达分析结果
 
-
