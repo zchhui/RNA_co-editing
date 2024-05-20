@@ -3,7 +3,7 @@ pat <- "D:/HFU/RNA_editing_combine_regulation/res/";
 options(stringsAsFactors = F)
 setwd(pat);
 exp <- read.table("D:/HFU/RNA_editing_combine_regulation/data/exp/LIHC.htseq_fpkm_symbol_90per_unique.txt",row.names=1,header=T,as.is=T);
-gene <- read.table("8co_tar_deg_gene.txt",header=T,sep="\t",stringsAsFactors=F); 
+gene <- read.table("co_tar_deg_gene.txt",header=T,sep="\t",stringsAsFactors=F); 
 exp.g <- exp[gene[,1],]
 exp.g <- t(exp.g)
 colnames(exp.g) <- gsub("-",".",colnames(exp.g))
