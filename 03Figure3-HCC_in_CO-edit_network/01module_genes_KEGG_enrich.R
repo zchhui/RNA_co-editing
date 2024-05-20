@@ -56,3 +56,36 @@ write.table(com.go,paste0("./mcode_net/enrich/kegg_enrich_mod",i,".txt"),sep="\t
 }
 }
 }
+
+
+
+enri.si.ge <- c();
+
+for(g in 1:length(msig.go)){
+msig.gen <- msig.go[[g]][-c(1:2)] 
+q <- length(intersect(msig.gen,gene))  #intersect genes
+if(q >= 3 ){
+m <- length(msig.gen)
+n <- length(bg) - m
+k <- length(gene) 
+p.value <- phyper(q-1,m,n,k,lower.tail=F)  #P（X>q） 
+res <- c(res,go.name[g])
+pp <- c(pp,p.value)
+qq <- c(qq,q)
+ge.q <- intersect(msig.gen,gene);
+si.g <- ed.mod[ed.mod[,6]%in%ge.q,c(1,6)] #sites & genes in mod i
+site.gene.kegg <- apply(si.g,1,function(x)paste(x,collapse="-"))
+site.gene.kegg <- paste(site.gene.kegg,collapse=",")
+enri.si.ge <- c(enri.si.ge,site.gene.kegg);
+}
+}
+res.pp <- data.frame(res,pp,p.adjust(pp,"BH"),qq,enri.si.ge);
+if(nrow(res.pp)!=0 ){
+if(length(which(p.adjust(pp,"BH")<0.05))>0){  
+ind <- which(p.adjust(pp,"BH")<0.05) #fdr<0.05
+res.pp <- res.pp[ind,]
+com.go <- res.pp[order(res.pp[,3]),];
+write.table(com.go,paste0("./mcode_net/enrich/kegg_enrich_mod",i,".txt"),sep="\t",row.names=F,quote=F);
+}
+}
+}
