@@ -22,7 +22,7 @@ com.tar <- c(com.tar,co.tar);
  }
 tar3 <- names(table(com.tar))[which( table(com.tar)>=3)];
 gen <- intersect(tar3,de)
-write.table(gen,"8co_tar_deg_gene.txt",sep="\t",row.names=F,quote=F);
+write.table(gen,"co_tar_deg_gene.txt",sep="\t",row.names=F,quote=F);
 
 library(gplots)
 venn(list(co.target=tar3,DEG=de));  #plot Fig7C
